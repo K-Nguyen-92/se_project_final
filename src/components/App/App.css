@@ -1,0 +1,12 @@
+.page {
+  max-width: 1440px;
+  max-height: 576px;
+}
+
+.page__home {
+  background-image: url("../../assets/main_image2.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  max-width: 1440px;
+  max-height: 576px;
+}

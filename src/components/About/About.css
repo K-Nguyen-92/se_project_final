@@ -1,0 +1,32 @@
+.about {
+  display: flex;
+  gap: 56px;
+  padding: 80px 104px;
+}
+
+.about__title {
+  font-family: "Roboto Slab", serif;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 46px;
+  max-width: 600px;
+  color: rgba(26, 27, 34, 1);
+}
+
+.about__description {
+  margin-top: 24px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  max-width: 600px;
+  color: rgba(26, 27, 34, 1);
+}
+
+.about__avatar {
+  width: 464px;
+  height: 464px;
+  border-radius: 1000px;
+  object-fit: cover;
+  object-position: top;
+}

@@ -1,0 +1,35 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  padding: 32px 104px;
+  padding-bottom: 26px;
+  align-items: center;
+}
+.footer__link {
+  padding-right: 40px;
+  text-decoration: none;
+  color: rgba(26, 27, 34, 1);
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.footer__link-icon {
+  padding-right: 24px;
+}
+.footer__link-icon:last-child {
+  padding-right: 0;
+}
+
+.footer__signature {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: rgba(182, 188, 191, 1);
+}

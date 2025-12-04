@@ -1,0 +1,26 @@
+.saved-articles__container {
+  margin: 40px 0 56px 104px;
+}
+.saved-articles__title {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  color: rgba(26, 27, 34, 0.5);
+}
+
+.saved-articles__welcome {
+  font-family: "Roboto Slab", sans-serif;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 46px;
+  color: rgba(26, 27, 34, 1);
+}
+
+.saved-articles__keywords {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  color: rgba(26, 27, 34, 1);
+}
