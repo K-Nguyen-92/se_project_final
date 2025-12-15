@@ -8,6 +8,8 @@ import Main from "../Main/Main.jsx";
 import LoginModal from "../LoginModal/LoginModal.jsx";
 import RegisterModal from "../RegisterModal/RegisterModal.jsx";
 import SavedArticles from "../SavedArticles/SavedArticles.jsx";
+import { defaultUser } from "../../utils/constant.js";
+import ProtectedRoute from "../ProtectedRoute/ProtectedRoute.jsx";
 
 function App() {
   const [activeModal, setActiveModal] = useState("");
@@ -27,6 +29,7 @@ function App() {
   };
   const handleLogin = () => {
     setIsLoggedIn(true);
+    setCurrentUser(defaultUser);
     closeActiveModal();
     return console.log("Login attempted", isLoggedIn);
   };
@@ -49,7 +52,7 @@ function App() {
         setNewsItems(data.articles);
         setIsSearched(true);
         setIsLoading(false);
-        console.log(data.articles);
+        // console.log(data.articles);
         if (data.articles.length === 0) {
           setNotFound(true);
         }
@@ -60,21 +63,38 @@ function App() {
         setIsLoading(false);
       });
   };
-  const handleCardBookmark = (url, isBookmark) => {
+  const handleCardBookmark = (article, isBookmark) => {
     if (isBookmark) {
-      console.log("Removing bookmark for:", url);
+      const updatedBookmarks = currentUser.bookmarks.filter((item) => {
+        return item.url !== article.url;
+      });
+      currentUser.bookmarks = updatedBookmarks;
+      currentUser.articleCounts -= 1;
+      // console.log(currentUser.bookmarks);
     } else {
-      console.log("Adding bookmark for:", url);
+      if (!currentUser.bookmarks.includes(article)) {
+        currentUser.bookmarks.push(article);
+        currentUser.articleCounts += 1;
+        // console.log(currentUser.bookmarks);
+      }
     }
   };
+  const deleteBookmark = (article) => {
+    const updatedBookmarks = currentUser.bookmarks.filter((item) => {
+      return item.url !== article.url;
+    });
+    currentUser.bookmarks = updatedBookmarks;
+    currentUser.articleCounts -= 1;
+  };
   return (
-    <div className={isHomePage ? "page__home page" : "page"}>
+    <div className={`page ${isHomePage && "page__home page"}`}>
       <div className="page__content">
         <Header
           handleButtonClick={handleButtonClick}
           isLoggedIn={isLoggedIn}
           handleLogout={handleLogout}
           isHomePage={isHomePage}
+          currentUser={currentUser}
         />
         <Routes>
           <Route
@@ -89,10 +109,23 @@ function App() {
                 notFound={notFound}
                 handleCardBookmark={handleCardBookmark}
                 hasError={hasError}
+                currentUser={currentUser}
+                handleButtonClick={handleButtonClick}
               />
             }
           ></Route>
-          <Route path="/saved-articles" element={<SavedArticles />}></Route>
+          <Route
+            path="/saved-articles"
+            element={
+              <ProtectedRoute isLoggedIn={isLoggedIn}>
+                <SavedArticles
+                  currentUser={currentUser}
+                  handleCardBookmark={handleCardBookmark}
+                  deleteBookmark={deleteBookmark}
+                />
+              </ProtectedRoute>
+            }
+          ></Route>
         </Routes>
       </div>
       <Footer />

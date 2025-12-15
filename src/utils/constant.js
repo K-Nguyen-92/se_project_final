@@ -21,3 +21,12 @@ export function getDateOneWeekAgo() {
   if (day.length < 2) day = "0" + day;
   return `${year}-${month}-${day}`;
 }
+
+export const defaultUser = {
+  _id: "1",
+  name: "Default",
+  username: "admin",
+  keyword: ["Nature", "Yellowstone"],
+  bookmarks: [],
+  articleCounts: 0,
+};

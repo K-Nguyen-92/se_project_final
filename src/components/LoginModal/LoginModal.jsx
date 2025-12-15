@@ -37,13 +37,14 @@ const LoginModal = ({
       <label htmlFor="login-email" className="modal__label">
         Email{" "}
         <input
-          type="text"
+          type="email"
           className="modal__input"
           id="login-email"
           placeholder="Enter email"
           name="email"
           value={values.email}
           onChange={handleChange}
+          required={true}
         />
       </label>
       <label htmlFor="login-password" className="modal__label">
@@ -56,6 +57,7 @@ const LoginModal = ({
           name="password"
           value={values.password}
           onChange={handleChange}
+          required={true}
         />
       </label>
       {errorMessage && <p className="modal__error-message">{errorMessage}</p>}

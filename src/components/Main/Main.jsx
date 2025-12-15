@@ -15,6 +15,8 @@ function Main({
   notFound,
   handleCardBookmark,
   hasError,
+  currentUser,
+  handleButtonClick,
 }) {
   const [visibleCards, setVisibleCards] = useState(3);
   const isEmpty = visibleCards >= 100;
@@ -36,6 +38,8 @@ function Main({
               item={item}
               isLoggedIn={isLoggedIn}
               handleCardBookmark={handleCardBookmark}
+              currentUser={currentUser}
+              handleButtonClick={handleButtonClick}
             />
           );
         })}

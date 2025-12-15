@@ -2,16 +2,24 @@ import "./NewsCard.css";
 import { useContext, useState } from "react";
 import CurrentUserContext from "../../contexts/CurrentUserContext";
 
-function NewsCard({ item, isLoggedIn, handleCardBookmark }) {
+function NewsCard({
+  item,
+  isLoggedIn,
+  handleCardBookmark,
+  currentUser,
+  deleteBookmark,
+  handleButtonClick,
+}) {
   const datePublished = new Date(item.publishedAt);
   const year = datePublished.getFullYear();
   const month = datePublished.toLocaleString("default", { month: "long" });
   const date = datePublished.getDate();
-  // const currentUser = useContext(CurrentUserContext);
   const [isBookmark, setisBookmark] = useState(false);
   const openUrl = () => {
     window.open(item.url);
   };
+  const homePage = window.location.pathname === "/";
+  const savedArticlesPage = window.location.pathname === "/saved-articles";
   return (
     <li className="news-card">
       <div className="news-card__container">
@@ -24,19 +32,32 @@ function NewsCard({ item, isLoggedIn, handleCardBookmark }) {
           />
           {/* <p className="news-card__keyword">Nature</p> */}
           <div className="news-card__bookmark-container">
-            <button
-              type="button"
-              className={
-                isBookmark
-                  ? "news-card__bookmark-button-marked"
-                  : "news-card__bookmark-button"
-              }
-              onClick={() => {
-                isLoggedIn &&
-                  (handleCardBookmark(item.url, isBookmark),
-                  setisBookmark(!isBookmark));
-              }}
-            ></button>
+            {homePage && (
+              <button
+                type="button"
+                className={
+                  isBookmark ||
+                  (isLoggedIn && currentUser.bookmarks.includes(item))
+                    ? "news-card__bookmark-button-marked"
+                    : "news-card__bookmark-button"
+                }
+                onClick={() => {
+                  isLoggedIn
+                    ? (handleCardBookmark(item, isBookmark),
+                      setisBookmark(!isBookmark))
+                    : handleButtonClick("sign-up");
+                }}
+              ></button>
+            )}
+            {savedArticlesPage && (
+              <button
+                type="button"
+                className={"news-card__trash-button"}
+                onClick={() => {
+                  deleteBookmark(item);
+                }}
+              ></button>
+            )}
             {!isLoggedIn && (
               <p className="news-card__bookmark-notice">
                 Sign in to save articles

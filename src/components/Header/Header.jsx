@@ -2,37 +2,50 @@ import "./Header.css";
 import logOutIconHomePage from "../../assets/logout-icon-home-page.svg";
 import logOutIcon from "../../assets/logout-icon.svg";
 import CurrentUserContext from "../../contexts/CurrentUserContext";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 
-function Header({ handleButtonClick, isLoggedIn, handleLogout, isHomePage }) {
-  const currentUser = useContext(CurrentUserContext);
+function Header({
+  handleButtonClick,
+  isLoggedIn,
+  handleLogout,
+  isHomePage,
+  currentUser,
+}) {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   return (
-    <header className="header">
+    <header className={`${isMenuOpen && "active"} header`}>
       <h1
         className={
-          isHomePage ? "header__home-page header__title" : "header__title"
+          isHomePage || isMenuOpen
+            ? "header__home-page header__title header__title-menu"
+            : "header__title"
         }
       >
         NewsExplorer
       </h1>
-      <div className="header__buttons header__home-page">
+      <div
+        className={`${
+          isMenuOpen && "active"
+        } header__buttons header__home-page`}
+      >
         {
           <Link to={"/"} className="header__link">
-            <a
+            <button
               className={
                 isHomePage
-                  ? "header__home-page header__button-home"
+                  ? "header__button-home-page header__button-home"
                   : "header__button-home"
               }
             >
               Home
-            </a>
+            </button>
           </Link>
         }
         {isLoggedIn && (
           <Link to={"/saved-articles"} className="header__link">
-            <a
+            <button
               className={
                 isHomePage
                   ? "header__articles-home-page header__button-articles"
@@ -40,7 +53,7 @@ function Header({ handleButtonClick, isLoggedIn, handleLogout, isHomePage }) {
               }
             >
               Saved articles
-            </a>
+            </button>
           </Link>
         )}
         {isLoggedIn ? (
@@ -51,10 +64,10 @@ function Header({ handleButtonClick, isLoggedIn, handleLogout, isHomePage }) {
                 : "header__button-user"
             }
           >
-            Elise
+            {currentUser.name}
             <img
               className="header__button-logout-icon"
-              src={isHomePage ? logOutIconHomePage : logOutIcon}
+              src={isHomePage || isMenuOpen ? logOutIconHomePage : logOutIcon}
               alt="Logout Icon"
               onClick={handleLogout}
             />
@@ -63,11 +76,26 @@ function Header({ handleButtonClick, isLoggedIn, handleLogout, isHomePage }) {
           <button
             className="header__button-login"
             type="button"
-            onClick={() => handleButtonClick("login")}
+            onClick={() => {
+              handleButtonClick("login");
+            }}
           >
             Sign In
           </button>
         )}
+      </div>
+      <div
+        className={
+          isHomePage
+            ? `${isMenuOpen && "active"} header__hamburger-menu`
+            : `${
+                isMenuOpen && "active"
+              } header__hamburger-menu header__hamburger-menu-dark`
+        }
+        onClick={() => setIsMenuOpen(!isMenuOpen)}
+      >
+        <span className="header__hamburger-item"></span>
+        <span className="header__hamburger-item"></span>
       </div>
     </header>
   );

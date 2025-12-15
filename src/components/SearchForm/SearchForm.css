@@ -53,3 +53,39 @@
   line-height: 24px;
   max-width: 608px;
 }
+
+@media screen and (max-width: 320px) {
+  .search-form__title {
+    font-size: 36px;
+    line-height: 40px;
+    margin: 30px 16px 16px 19px;
+  }
+  .search-form__subtitle {
+    font-size: 18px;
+    line-height: 24px;
+    margin: 0 16px;
+  }
+  .search-form__form {
+    margin: 122px 16px 16px 16px;
+  }
+  .search-form__input {
+    width: 256px;
+    height: 22px;
+    font-size: 16px;
+    line-height: 22px;
+    padding: 17px 16px;
+  }
+
+  .search-form__button {
+    width: 288px;
+    height: 56px;
+    position: initial;
+    font-size: 14px;
+    line-height: 20px;
+    padding: 16px 116px;
+    margin-top: 16px;
+  }
+  .search-form {
+    padding-bottom: 64px;
+  }
+}

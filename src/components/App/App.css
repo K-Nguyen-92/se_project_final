@@ -1,12 +1,24 @@
 .page {
   max-width: 1440px;
   max-height: 576px;
+  margin: 0 auto;
 }
 
 .page__home {
   background-image: url("../../assets/main_image2.png");
   background-repeat: no-repeat;
   background-size: cover;
-  max-width: 1440px;
-  max-height: 576px;
+}
+
+@media screen and (max-width: 320px) {
+  .page__home {
+    background-image: url("../../assets/main_image2.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+  .page {
+    max-width: 320px;
+    max-height: 536px;
+  }
 }

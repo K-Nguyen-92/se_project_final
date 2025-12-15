@@ -116,3 +116,19 @@
 .modal__form-success {
   align-items: flex-start;
 }
+@media screen and (max-width: 320px) {
+  .modal__content {
+    max-width: 262px;
+    height: 560px;
+  }
+  .modal {
+    top: 170px;
+  }
+  .modal__submit-button {
+    max-width: 288px;
+  }
+  .modal__close-button {
+    top: -38px;
+    left: 265px;
+  }
+}
