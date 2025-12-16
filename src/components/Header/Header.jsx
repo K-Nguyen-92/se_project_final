@@ -1,7 +1,6 @@
 import "./Header.css";
 import logOutIconHomePage from "../../assets/logout-icon-home-page.svg";
 import logOutIcon from "../../assets/logout-icon.svg";
-import CurrentUserContext from "../../contexts/CurrentUserContext";
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -13,7 +12,6 @@ function Header({
   currentUser,
 }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isModalOpen, setIsModalOpen] = useState(false);
   return (
     <header className={`${isMenuOpen && "active"} header`}>
       <h1
@@ -63,13 +61,13 @@ function Header({
                 ? "header__button-user-home-page header__button-user"
                 : "header__button-user"
             }
+            onClick={handleLogout}
           >
             {currentUser.name}
             <img
               className="header__button-logout-icon"
               src={isHomePage || isMenuOpen ? logOutIconHomePage : logOutIcon}
               alt="Logout Icon"
-              onClick={handleLogout}
             />
           </button>
         ) : (
