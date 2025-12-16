@@ -31,7 +31,7 @@
   object-position: top;
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 480px) {
   .about {
     flex-direction: column;
     align-items: center;

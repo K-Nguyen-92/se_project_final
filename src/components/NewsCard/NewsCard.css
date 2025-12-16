@@ -154,7 +154,7 @@
   line-height: 24px;
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 480px) {
   .news-card__card {
     width: 288px;
   }

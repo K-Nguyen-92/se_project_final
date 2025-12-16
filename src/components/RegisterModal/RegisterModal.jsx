@@ -33,7 +33,7 @@ const RegisterModal = ({
       <label htmlFor="email" className="modal__label">
         Email
         <input
-          type="text"
+          type="email"
           className="modal__input"
           id="register-email"
           placeholder="Enter email"

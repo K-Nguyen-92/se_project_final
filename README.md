@@ -4,7 +4,7 @@ Homepage: `https://k-nguyen-92.github.io/se_project_final/`
 
 ## Project Overview
 
-This is currently a front-end project to demonstrate my knowledge in HTML, CSS, Javascript, and React in developing from a specific design guideline using Figma.
+This is currently a front-end project to demonstrate my knowledge in HTML, CSS, Javascript, and React in developing from a specific design guideline using Figma. The project is currently being deployed using Github Page.
 
 ## Running the Project
 

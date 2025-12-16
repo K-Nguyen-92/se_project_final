@@ -37,7 +37,7 @@
   color: rgba(182, 188, 191, 1);
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 480px) {
   .footer {
     flex-direction: column-reverse;
     align-items: center;

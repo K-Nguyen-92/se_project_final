@@ -54,7 +54,7 @@
   max-width: 608px;
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 480px) {
   .search-form__title {
     font-size: 36px;
     line-height: 40px;

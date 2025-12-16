@@ -10,7 +10,7 @@
   background-size: cover;
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 480px) {
   .page__home {
     background-image: url("../../assets/main_image2.png");
     background-repeat: no-repeat;
