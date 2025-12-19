@@ -65,7 +65,7 @@
   background-color: transparent;
   border-radius: 100px;
   border: 1px solid white;
-  padding: 12px 12px;
+  /* padding: 12px 12px; */
   width: 176px;
   height: 48px;
   color: white;
@@ -106,7 +106,17 @@
 .header__hamburger-menu {
   display: none;
 }
-
+@media screen and (max-width: 768px) {
+  .header {
+    padding: 23px 40px 0 40px;
+  }
+  .header__button-home {
+    margin-right: 16px;
+  }
+  .header__button-user {
+    margin-left: 16px;
+  }
+}
 @media screen and (max-width: 480px) {
   .header {
     padding: 0px 16px;
@@ -128,14 +138,14 @@
     background-color: rgba(26, 27, 34, 1);
     border-radius: 0 0 16px 16px;
     padding: 16px 16px 24px 16px;
-    width: 288px;
+    width: -webkit-fill-available;
   }
   .header__button-home {
     border-bottom: none;
     color: white;
   }
   .header__button-login {
-    width: 288px;
+    width: -webkit-fill-available;
   }
   .header__button-user {
     margin: 0;

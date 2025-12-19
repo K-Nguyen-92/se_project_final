@@ -1,13 +1,18 @@
 import "./SearchForm.css";
 import { useForm } from "../../hooks/useForm";
+import { defaultUser } from "../../utils/constant";
 
 const SearchForm = ({ handleQuery }) => {
   const { values, handleChange, resetForm } = useForm({
     query: "",
   });
+  const capitalizeFirstLetter = (string) => {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  };
   function handleSubmit(e) {
     e.preventDefault();
     handleQuery(values.query);
+    defaultUser.keyword.push(capitalizeFirstLetter(values.query));
     resetForm();
   }
   return (

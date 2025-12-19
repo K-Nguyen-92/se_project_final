@@ -70,12 +70,12 @@ function App() {
       });
       currentUser.bookmarks = updatedBookmarks;
       currentUser.articleCounts -= 1;
-      // console.log(currentUser.bookmarks);
+      console.log(currentUser.bookmarks);
     } else {
       if (!currentUser.bookmarks.includes(article)) {
         currentUser.bookmarks.push(article);
         currentUser.articleCounts += 1;
-        // console.log(currentUser.bookmarks);
+        console.log(currentUser.bookmarks);
       }
     }
   };

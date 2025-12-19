@@ -26,7 +26,7 @@ export const defaultUser = {
   _id: "1",
   name: "Default",
   username: "admin",
-  keyword: ["Nature", "Yellowstone"],
+  keyword: [],
   bookmarks: [],
   articleCounts: 0,
 };

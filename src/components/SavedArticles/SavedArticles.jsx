@@ -12,7 +12,8 @@ function SavedArticles({ currentUser, handleCardBookmark, deleteBookmark }) {
           articles
         </h1>
         <p className="saved-articles__keywords">
-          By keywords: Nature, Yellowstone, and 2 other
+          By keywords: {currentUser.keyword[0]}, {currentUser.keyword[1]}{" "}
+          {`${currentUser.keyword.length > 2 ? "and more" : ""}`}
         </p>
       </div>
       <ul className="saved-articles__bookmark">

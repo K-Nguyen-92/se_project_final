@@ -18,8 +18,12 @@ function NewsCard({
   const openUrl = () => {
     window.open(item.url);
   };
-  const homePage = window.location.pathname === "/";
-  const savedArticlesPage = window.location.pathname === "/saved-articles";
+  const homePage =
+    window.location.pathname === "/se_project_final/" ||
+    window.location.pathname === "/";
+  const savedArticlesPage =
+    window.location.pathname === "/saved-articles" ||
+    window.location.pathname === "/se_project_final/saved-articles";
   return (
     <li className="news-card">
       <div className="news-card__container">

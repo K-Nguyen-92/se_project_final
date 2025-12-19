@@ -65,7 +65,14 @@
   padding: 0;
   text-align: center;
 }
-
+@media screen and (max-width: 768px) {
+  .main__search-articles {
+    grid-template-columns: repeat(3, 224px);
+    padding: 0 16px;
+    gap: 8px;
+    justify-content: center;
+  }
+}
 @media screen and (max-width: 480px) {
   .main__search-articles {
     grid-template-columns: 288px;
