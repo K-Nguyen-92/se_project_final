@@ -1,0 +1,136 @@
+.search-form {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 160px;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+}
+.search-form__form {
+  position: relative;
+}
+.search-form__input {
+  height: 64px;
+  width: 608px;
+  border-radius: 100px;
+  border: none;
+  font-family: "Roboto", serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  padding: 0 0 0 24px;
+}
+
+.search-form__button {
+  width: 168px;
+  height: 64px;
+  border-radius: 100px;
+  border: none;
+  background-color: rgba(47, 113, 229, 1);
+  color: white;
+  font-size: 18px;
+  line-height: 24px;
+  position: absolute;
+  cursor: pointer;
+  left: 465px;
+  font-family: "Roboto", serif;
+  font-weight: 500;
+}
+.search-form__title {
+  margin: 80px 0 32px 0;
+  font-family: "Roboto Slab", serif;
+  font-weight: 400;
+  font-size: 60px;
+  line-height: 64px;
+  max-width: 608px;
+}
+
+.search-form__subtitle {
+  margin: 0 0 88px 0;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  max-width: 608px;
+}
+@media screen and (max-width: 768px) {
+  .search-form {
+    align-items: flex-start;
+    margin-left: 160px;
+  }
+  .search-form__title {
+    font-size: 36px;
+    line-height: 40px;
+    margin: 30px 16px 16px 19px;
+    height: 80px;
+    width: auto;
+  }
+  .search-form__subtitle {
+    font-size: 18px;
+    line-height: 24px;
+    margin: 0 16px;
+    width: auto;
+    height: 48px;
+  }
+  .search-form__form {
+    margin: 48px 16px 16px 16px;
+  }
+  .search-form__input {
+    width: 424px;
+    height: 56px;
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  .search-form__button {
+    width: 160px;
+    height: 56px;
+    position: absolute;
+    top: 0px;
+    left: 288px;
+    font-size: 14px;
+    line-height: 20px;
+  }
+  .search-form {
+    padding-bottom: 64px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .search-form {
+    margin: 0;
+  }
+  .search-form__title {
+    font-size: 36px;
+    line-height: 40px;
+    margin: 30px 16px 16px 19px;
+  }
+  .search-form__subtitle {
+    font-size: 18px;
+    line-height: 24px;
+    margin: 0 16px;
+  }
+  .search-form__form {
+    margin: 122px 16px 16px 16px;
+  }
+  .search-form__input {
+    width: -webkit-fill-available;
+    height: 22px;
+    font-size: 16px;
+    line-height: 22px;
+    padding: 17px 16px;
+  }
+
+  .search-form__button {
+    width: -webkit-fill-available;
+    height: 56px;
+    position: initial;
+    font-size: 14px;
+    line-height: 20px;
+    padding: 16px 116px;
+    margin-top: 16px;
+  }
+  .search-form {
+    padding-bottom: 64px;
+  }
+}

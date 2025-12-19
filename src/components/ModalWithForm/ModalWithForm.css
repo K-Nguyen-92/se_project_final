@@ -1,0 +1,134 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #0000004d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+}
+
+.modal_opened {
+  visibility: visible;
+}
+
+.modal__close-button {
+  position: absolute;
+  top: -35px;
+  left: 470px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.modal__content {
+  background-color: #fff;
+  position: relative;
+  max-width: 430px;
+  width: 100%;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  border: none;
+  border-radius: 20px;
+  padding: 28px;
+}
+
+.modal__title {
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  font-size: 24px;
+  border: none;
+  width: 315px;
+  color: rgba(26, 27, 34, 1);
+  line-height: 100%;
+}
+
+.modal__input-container {
+  display: flex;
+  gap: 11px;
+  padding: 8px 0;
+}
+
+.modal__submit-button {
+  padding: 20px 114px;
+  width: 358px;
+  border: none;
+  border-radius: 100px;
+  color: white;
+  background-color: #0000004d;
+  cursor: pointer;
+}
+.modal__submit-button-alt {
+  margin-top: 16px;
+  border: none;
+  border-radius: 4px;
+  color: rgba(0, 0, 0, 0.5);
+  background-color: transparent;
+  width: fit-content;
+  cursor: pointer;
+}
+
+.modal__submit-button-alt-success {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  color: rgba(47, 113, 229, 1);
+}
+
+.modal__submit-button:hover {
+  background-color: #00000099;
+}
+
+.modal__label {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  color: rgba(47, 113, 229, 1);
+  display: flex;
+  flex-direction: column;
+  margin: 22px 0;
+  gap: 9px;
+  width: 100%;
+}
+
+.modal__input {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  border: none;
+  border-bottom: solid 1px;
+  padding: 0 0 10px 0;
+}
+
+.modal__error-message {
+  color: rgba(255, 77, 0, 1);
+}
+
+.modal__form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.modal__form-success {
+  align-items: flex-start;
+}
+@media screen and (max-width: 480px) {
+  .modal__content {
+    max-width: 262px;
+    height: 560px;
+  }
+  .modal {
+    top: 170px;
+  }
+  .modal__submit-button {
+    max-width: 288px;
+  }
+  .modal__close-button {
+    top: -38px;
+    left: 265px;
+  }
+}

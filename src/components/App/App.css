@@ -1,0 +1,28 @@
+.page {
+  max-width: 100%;
+  max-height: 576px;
+  margin: 0 auto;
+}
+
+.page__home {
+  background-image: url("../../assets/main_image2.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+@media screen and (max-width: 768px) {
+  .page {
+    max-height: 400px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .page__home {
+    background-image: url("../../assets/main_image2.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+  .page {
+    max-width: 100%;
+    max-height: 536px;
+  }
+}
